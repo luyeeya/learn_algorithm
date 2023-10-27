@@ -9,11 +9,11 @@ public class PerformanceEvaluation {
     public static void evaluateLinearSearch() {
         int[] sizeArray = {1_000_000, 10_000_000};
         for (int n : sizeArray) {
-            Integer[] data = ArrayGenerator.generateOrderedArray(n);
+            Integer[] arr = ArrayGenerator.generateOrderedArray(n);
             int runTimes = 100;
             long beginTime = System.nanoTime();
             for (int i = 0; i < runTimes; i++) {
-                LinearSearch.search(data, n);
+                LinearSearch.search(arr, n);
             }
             long endTime = System.nanoTime();
             float costTime = (endTime - beginTime) / 1_000_000_000f;

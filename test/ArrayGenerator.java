@@ -2,10 +2,10 @@ package test;
 
 public class ArrayGenerator {
     public static Integer[] generateOrderedArray(int n) {
-        Integer[] data = new Integer[n];
+        Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
-            data[i] = i;
+            arr[i] = i;
         }
-        return data;
+        return arr;
     }
 }
