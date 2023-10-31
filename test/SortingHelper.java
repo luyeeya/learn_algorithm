@@ -1,8 +1,10 @@
 package test;
 
+import sort.InsertionSort;
 import sort.SelectionSort;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class SortingHelper {
     /**
@@ -55,9 +57,24 @@ public class SortingHelper {
         long endTime = System.nanoTime();
         double costTime = (endTime - beginTime) / 1000_000_000.0;
         System.out.printf("%s, length: %d, cost: %f s%n", sortClass.getSimpleName(), arr.length, costTime);
+        if (arr.length <= 10) {
+            System.out.printf("sorted array: %s%n", Arrays.toString(arr));
+        }
     }
 
     public static void main(String[] args) {
+        Student[] studentArr = {
+                new Student("zhangsan", 100),
+                new Student("lisi", 59),
+                new Student("wangwu", 88),
+                new Student("zhaoliu", 60),
+                new Student("tianqi", 79),
+        };
+
         SortingHelper.sortTest(SelectionSort.class, ArrayGenerator.generateRandomArray(10000, 100000));
+        SortingHelper.sortTest(SelectionSort.class, studentArr.clone());
+
+        SortingHelper.sortTest(InsertionSort.class, ArrayGenerator.generateRandomArray(10000, 100000));
+        SortingHelper.sortTest(InsertionSort.class, studentArr.clone());
     }
 }

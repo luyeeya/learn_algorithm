@@ -1,7 +1,5 @@
 package sort;
 
-import java.util.Arrays;
-
 public class SelectionSort {
     private SelectionSort() {
     }
@@ -30,47 +28,5 @@ public class SelectionSort {
             arr[i] = arr[minIdx];
             arr[minIdx] = temp;
         }
-    }
-
-    static class Student implements Comparable<Student> {
-        private final String name;
-        private final int score;
-
-        public Student(String name, int score) {
-            this.name = name;
-            this.score = score;
-        }
-
-        /**
-         * 按照成绩由低到高排序
-         *
-         * @param another 要比较的学生
-         * @return 比较结果, 负值表示小于, 正值表示大于
-         */
-        @Override
-        public int compareTo(Student another) {
-            return this.score - another.score;
-        }
-
-        @Override
-        public String toString() {
-            return "Student{name='" + name + "', score=" + score + '}';
-        }
-    }
-
-    public static void main(String[] args) {
-        Integer[] arr = {57, 2333, 100, 666, 9527, 999, 95, 88, 827};
-        SelectionSort.sort(arr);
-        System.out.println(Arrays.toString(arr));
-
-        Student[] studentArr = {
-                new Student("zhangsan", 100),
-                new Student("lisi", 59),
-                new Student("wangwu", 88),
-                new Student("zhaoliu", 60),
-                new Student("tianqi", 79),
-        };
-        SelectionSort.sort(studentArr);
-        System.out.println(Arrays.toString(studentArr));
     }
 }
