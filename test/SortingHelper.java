@@ -71,9 +71,11 @@ public class SortingHelper {
                 new Student("tianqi", 79),
         };
 
+        System.out.println("************************ SelectionSort ************************");
         SortingHelper.sortTest(SelectionSort.class, ArrayGenerator.generateRandomArray(10000, 100000));
         SortingHelper.sortTest(SelectionSort.class, studentArr.clone());
 
+        System.out.println("************************ InsertionSort ************************");
         SortingHelper.sortTest(InsertionSort.class, ArrayGenerator.generateRandomArray(10000, 100000));
         SortingHelper.sortTest(InsertionSort.class, studentArr.clone());
     }
